@@ -1,0 +1,24 @@
+--Create a store database
+
+CREATE TABLE funko (id INTEGER PRIMARY KEY, name TEXT, release_year INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO funko VALUES
+(1, "Freddie", 2019, 290, 2),
+(2, "Tony Romo", 2015, 135, 3),
+(3, "Tywin Lannister", 2014, 80, 5),
+(4, "The Hound", 2012, 70, 10),
+(5, "Ygritte", 2014, 65, 11),
+(6, "Daenerys", 2014, 55, 12),
+(7, "Joffrey", 2014, 48, 10),
+(8, "Donatello", 2013, 47, 9),
+(9, "Michelangelo", 2013, 46, 11),
+(10, "Robb", 2013, 45, 10),
+(11, "Raphael", 2013, 45, 10),
+(12, "Lucario(Jumbo)", 2022, 44, 5),
+(13, "Toothless(Jumbo)", 2019, 42, 3),
+(14, "Mace Windu", 2017, 41, 8),
+(15, "Mando with Child", 2020, 40, 12);
+
+--display the database ordered by price
+SELECT * FROM funko
+ORDER BY price DESC;
