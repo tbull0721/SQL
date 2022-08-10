@@ -206,30 +206,30 @@ INSERT INTO picks (pick_number, name, college, picked_by, position)
 	VALUES(99,"Paul Dawson","TCU","Cincinnati","OLB");
 	
 	
-	
+/ Top 10 colleges with most draft picks /
 SELECT COUNT(*) AS total_picks, college FROM picks
     GROUP BY college
     ORDER BY total_picks DESC
     Limit 10;
     
     
-    
+/ Number of picks by position /  
 SELECT COUNT(*) AS total_picks, position FROM picks
     WHERE pick_number <= 32
     Group BY position
     ORDER BY total_picks DESC;
     
     
-    
+/ Number of picks by team /
 SELECT COUNT(*) AS total_picks, picked_by FROM picks
     GROUP BY picked_by
     ORDER BY total_picks DESC;
     
-    
+/ Players drafted by Dallas /
 SELECT * FROM picks
     WHERE picked_by = 'Dallas';
     
     
-    
+/ QBs drafted /
 SELECT pick_number, name, picked_by FROM picks
     WHERE position = 'QB';
