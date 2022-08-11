@@ -1,0 +1,32 @@
+CREATE TABLE movies (id INTEGER PRIMARY KEY, title TEXT);
+
+INSERT INTO movies (title) VALUES 
+    ('Step Brothers'),
+    ('Edge of Tomorrow'),
+    ('XMEN');
+    
+    
+CREATE TABLE actors (id INTEGER PRIMARY KEY, movie_id INTEGER, actor TEXT);
+
+INSERT INTO actors (movie_id, actor) VALUES (1, 'Will Ferrell'),
+    (2, 'Tom Cruise'),
+    (3, 'Hugh Jackman'),
+    (1, 'John C Reilly'),
+    (2, 'Emily Blunt'),
+    (3, 'Patrick Stewart');
+    
+    
+CREATE TABLE costars (id INTEGER PRIMARY KEY, actor_id1 INTEGER, actor_id2 INTEGER);
+
+INSERT INTO costars (actor_id1, actor_id2)
+    VALUES (1, 4),
+    (2, 5),
+    (3, 6);
+
+
+/ Actors in the same movie /
+SELECT a.actor, b.actor FROM costars
+    JOIN actors a
+    ON costars.actor_id1 = a.id
+    JOIN actors b
+    ON costars.actor_id2 = b.id;
