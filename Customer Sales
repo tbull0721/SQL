@@ -1,0 +1,5 @@
+SELECT COUNT(customers.acctnum), AVG(Quantity*price)
+FROM FebSales
+JOIN customers
+ON FebSales.orderID = customers.order_id
+WHERE FebSales.Quantity > 1;
