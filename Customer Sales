@@ -1,3 +1,34 @@
+SELECT COUNT(*) FROM JanSales;
+
+
+
+SELECT COUNT(*) FROM JanSales
+WHERE product = 'iPhone';
+
+
+
+SELECT acctnum FROM customers
+INNER JOIN FebSales
+ON customers.order_id = FebSales.orderID;
+
+
+
+SELECT distinct Product, price
+FROM JanSales
+WHERE price IN (SELECT min(price) FROM JanSales);
+
+
+
+SELECT product, SUM(Quantity)*price AS Revenue FROM JanSales
+GROUP BY product;
+
+
+
+SELECT product, quantity, (quantity*price) AS total_revenue, location FROM FebSales
+WHERE location = '548 Lincoln St, Seattle, WA 98101';
+
+
+
 SELECT COUNT(customers.acctnum), AVG(Quantity*price)
 FROM FebSales
 JOIN customers
